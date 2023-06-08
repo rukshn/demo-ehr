@@ -1,0 +1,45 @@
+html
+  head
+    link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css' integrity='sha512-HqxHUkJM0SYcbvxUw5P60SzdOTy/QVwA1JJrvaXJv4q7lmbDZCmZaqz01UPOaQveoxfYRv1tHozWGPMcuTBuvQ==' crossorigin='anonymous' referrerpolicy='no-referrer')
+    title= title
+  body
+    
+    nav.navbar.is-dark(role='navigation' aria-label='main navigation')
+        .navbar-brand
+            a.navbar-item(href='/')
+                img(src='/heart.png' height='28')
+                h1.is-size-4.has-text-weight-bold My EHR
+            a.navbar-burger(role='button' aria-label='menu' aria-expanded='false' data-target='navbarBasicExample')
+                span(aria-hidden='true')
+                span(aria-hidden='true')
+                span(aria-hidden='true')
+        #navbarBasicExample.navbar-menu
+            .navbar-start
+                a.navbar-item
+                    | Home
+                a.navbar-item
+                    | Documentation
+            
+            .navbar-end
+                .navbar-item
+                    .buttons
+                        a.button.is-light
+                            | Log out
+
+    .container.my-2 
+        form(method="post", action="/", enctype="application/x-www-form-urlencoded")
+            .field
+                .control 
+                    .select.is-fullwidth
+                        select(name="resource")
+                            option(value="patient") Patient
+                            option(value="observation") Observation
+            .field.has-addons.is-fullwidth
+                .control.is-expanded
+                    input.input(type='text', placeholder='Search query', required name="query")
+                .control 
+                    button.button.is-link(type="submit") Search
+        
+        .my-4
+            h2.is-size-3.has-font-weight-bold Data 
+            pre= json

@@ -1,0 +1,30 @@
+{
+  "name": "demo-ehr",
+  "version": "1.0.0",
+  "description": "A demo EHR to demonstrate FHIR Auth",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "node ./src/index.js",
+    "watch": "nodemon ./src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rukshn/demo-ehr.git"
+  },
+  "author": "Rukshan <rukshan@ruky.me>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rukshn/demo-ehr/issues"
+  },
+  "homepage": "https://github.com/rukshn/demo-ehr#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "jose": "^4.11.2",
+    "node-fetch": "^3.3.0",
+    "pug": "^3.0.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
